@@ -1,4 +1,4 @@
-# Galleria
+# Jiraan
 #### A python application based on Django framework, 2019
 ####  **[Sauda Habib](https://github.com/saudahabib)**
 ## Description
