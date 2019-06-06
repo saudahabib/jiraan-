@@ -28,8 +28,17 @@ class User(models.Model):
     neighborhood_id=models.ForeignKey(Neighborhood, on_delete=models.CASCADE)
 
 
+
     def __str__(self):
         return self.first_name
+
+    def save_users(self):
+        self.save()
+
+    def delete_user(self):
+        deleted_users=User.objects.all().delete()
+        return deleted_users
+
 
 class Business(models.Model):
     business_name=models.CharField(max_length=50)
