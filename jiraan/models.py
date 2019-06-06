@@ -6,13 +6,21 @@ class Neighborhood(models.Model):
     hood_location = models.CharField(max_length=50)
     hood_count=models.CharField(max_length=50)
 
+    #save function
+    def save_hood(self):
+        self.save()
+
+    #delete function
+    def delete_hood(self):
+        del_hoods=Neighborhood.objects.all().delete()
+        return del_hoods
 
     def __str__(self):
         return self.hood_name
 
     class Meta:
         ordering = ['-id']
-        
+
 class User(models.Model):
     first_name=models.CharField(max_length=50)
     user_id=models.IntegerField()
