@@ -49,3 +49,10 @@ class Business(models.Model):
 
     def __str__(self):
         return self.business_name
+
+    def save_bus(self):
+        self.save()
+
+    def delete_bus(self):
+        objects=Business.objects.all().delete()
+        return objects
